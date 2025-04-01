@@ -11,8 +11,8 @@ public class Testing : MonoBehaviour
     void Update()
     {
         Vector3 vec = new Vector3(
-            Input.GetAxis("Horizontal")*0.3f,  
-            Input.GetAxis("Vertical")*0.3f, 
+            Input.GetAxis("Horizontal")*Time.deltaTime,  
+            Input.GetAxis("Vertical")*Time.deltaTime, 
             0);
         transform.Translate(vec);
     }
