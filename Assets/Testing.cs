@@ -2,24 +2,18 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
+    void Start()
+    {
+        
+    }
+
+
     void Update()
     {
-        if (Input.anyKeyDown)
-            Debug.Log("키 입력");
-
-        if (Input.anyKey)
-            Debug.Log("키 누르는 중");
-
-        if (Input.GetButton("Horizontal"))
-        {
-            Debug.Log("횡이동중..."+ Input.GetAxis("Horizontal"));
-            
-        }
-
-        if (Input.GetButton("Vertical"))
-        {
-            Debug.Log("종이동중..." + Input.GetAxis("Vertical"));
-
-        }
+        Vector3 vec = new Vector3(
+            Input.GetAxis("Horizontal")*0.3f,  
+            Input.GetAxis("Vertical")*0.3f, 
+            0);
+        transform.Translate(vec);
     }
 }
